@@ -3,7 +3,7 @@ package com.nighthawk.spring_portfolio;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.nighthawk.spring_portfolio.mvc.jwt.JwtAuthenticationEntryPoint;
 import com.nighthawk.spring_portfolio.mvc.jwt.JwtRequestFilter;
-import com.nighthawk.spring_portfolio.mvc.person.PersonDetailsService;
+// import com.nighthawk.spring_portfolio.mvc.person.PersonDetailsService;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,8 +38,8 @@ public class SecurityConfig {
 	@Autowired
 	private JwtRequestFilter jwtRequestFilter;
 
-	@Autowired
-	private PersonDetailsService personDetailsService;
+	// @Autowired
+	// private PersonDetailsService personDetailsService;
 
     // @Bean  // Sets up password encoding style
     PasswordEncoder passwordEncoder(){
@@ -51,7 +51,7 @@ public class SecurityConfig {
 		// configure AuthenticationManager so that it knows from where to load
 		// user for matching credentials
 		// Use BCryptPasswordEncoder
-		auth.userDetailsService(personDetailsService).passwordEncoder(passwordEncoder());
+		// auth.userDetailsService(personDetailsService).passwordEncoder(passwordEncoder());
 	}
 
 	@Bean
